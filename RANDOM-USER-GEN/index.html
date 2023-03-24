@@ -8,7 +8,15 @@
     <title>Random User Generator</title>
 </head>
 <body>
-    <div id="app"></div> <!-- 设置vue的挂载点 -->
+    <div id="app">
+        <img v-bind:class="gender" v-bind:src="picture" v-bind:alt="`${firstName} ${lastName}`">  <!-- 使用v-bind绑定图片的src属性, 使用模板字符串拼接alt属性 -->
+        <h1>{{firstName}} {{lastName}}</h1>
+        <h3>Email:{{email}}</h3>
+        <h3>gender:{{gender}}</h3>
+        <p>
+            <button v-bind:class="gender">Get Random User</button>
+        </p>
+    </div> <!-- 设置vue的挂载点 -->
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!-- 通过CDN加载vue框架 -->
     <script src="app.js"></script> <!-- 加载app.js文件 -->
