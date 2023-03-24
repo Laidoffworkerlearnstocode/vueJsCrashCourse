@@ -14,7 +14,7 @@
         <h3>Email:{{email}}</h3>
         <h3>gender:{{gender}}</h3>
         <p>
-            <button v-bind:class="gender">Get Random User</button>
+            <button v-on:click="getUser()" v-bind:class="gender">Get Random User</button>
         </p>
     </div> <!-- 设置vue的挂载点 -->
 
