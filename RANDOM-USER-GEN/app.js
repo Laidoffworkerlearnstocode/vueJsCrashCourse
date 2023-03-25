@@ -23,3 +23,4 @@ const app = Vue.createApp({
 
 app.mount('#app'); // 通过Vue实例的mount()方法挂载到DOM元素上,这里是挂载到id为app的元素上
 
+ 
