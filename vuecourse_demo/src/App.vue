@@ -1,12 +1,19 @@
-<script setup>
-
-</script>
-
 <template>
   <div class="container">
-    <h1>Hello World!</h1>
+    <Header title="Task Tracker"></Header>
   </div>
 </template>
+
+<script>
+import Header from './components/Header.vue'
+
+export default {
+  name: 'App',
+  components: {
+    Header
+  },
+}
+</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap'); 

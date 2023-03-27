@@ -1,14 +1,20 @@
 <template>
     <header>
         <h1>
-            Task Tracker
+            {{ title }}
         </h1>     
     </header>
 </template>
 
 <script>
 export default {
-    name: 'Header'
+    name: 'Header',
+    props: {
+        title: {
+            type: String,
+            required: true
+        }
+    },
 }
 </script>
 
