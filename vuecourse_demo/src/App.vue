@@ -12,10 +12,37 @@ export default {
   components: {
     Header
   },
+  data(){
+    return{
+      tasks:[]
+    }
+  },
+  created(){
+    this.tasks = [
+      {
+        id: 1,
+        text: 'Doctors Appointment',
+        day: 'Feb 5th at 2:30pm',
+        reminder: true,
+      },
+      {
+        id: 2,
+        text: 'Meeting at School',
+        day: 'Feb 6th at 1:30pm',
+        reminder: true,
+      },
+      {
+        id: 3,
+        text: 'Food Shopping',
+        day: 'Feb 5th at 2:30pm',
+        reminder: false,
+      }
+    ]
+  }
 }
 </script>
 
-<style scoped>
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap'); 
 /* 设置全局字体，这里导入的是谷歌字体，也可以导入本地字体 */
 
