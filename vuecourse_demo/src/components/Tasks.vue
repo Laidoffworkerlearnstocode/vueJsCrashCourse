@@ -1,10 +1,12 @@
 <template>
     <div v-bind:key="task.id" v-for="task in tasks">
-        <h3>{{ task.id }}.{{ task.text }}</h3>
+        <Task v-bind:task="task" />
     </div>
 </template>
 
 <script>
+import Task from './Task.vue'
+
 export default {
     name: 'Tasks',
     props: {
@@ -12,6 +14,9 @@ export default {
             type: Array,
             required: true
         }
+    },
+    components: {
+        Task
     },
 }
 </script>

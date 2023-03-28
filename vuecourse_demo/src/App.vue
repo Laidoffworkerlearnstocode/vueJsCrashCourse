@@ -38,7 +38,7 @@ export default {
         id: 3,
         text: 'Food Shopping',
         day: 'Feb 5th at 2:30pm',
-        reminder: false,
+        reminder: true,
       }
     ]
   }
@@ -60,7 +60,7 @@ body {
 }/* font-family 属性规定了元素的字体族，可以指定多个字体族作为备选方案。在这个样式规则中，首选的字体族是 'Poppins' 字体，如果用户的计算机上没有安装 'Poppins' 字体，浏览器会使用字体族中的第一个可用字体，也就是 sans-serif。 */
 
 .container {
-  max-width: 500px;
+  max-width: 700x;
   margin: 30px auto;
   padding: 30px;
   overflow: auto;
