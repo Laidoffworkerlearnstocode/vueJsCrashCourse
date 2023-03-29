@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Task Tracker"></Header>
-    <Tasks v-bind:tasks="tasks"></Tasks>    
+    <Tasks @delete-task="deleteTask" v-bind:tasks="tasks"></Tasks>    
   </div>
 </template>
 
@@ -18,6 +18,12 @@ export default {
   data(){
     return{
       tasks:[]
+    }
+  },
+
+  methods:{
+    deleteTask(id){
+      this.tasks = this.tasks.filter((task) => task.id !== id)
     }
   },
   created(){
