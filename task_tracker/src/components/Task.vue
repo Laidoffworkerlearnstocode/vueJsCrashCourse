@@ -1,5 +1,5 @@
 <template>
-    <div v-bind:class="[task.reminder ? 'reminder' : '', 'task']">
+    <div @dblclick="toggleReminder(task.id)" :class="[task.reminder ? 'reminder' : '', 'task']">
         <h3>{{task.text}}
             <i v-on:click="onDelete(task.id)" class="fas fa-times"></i>
         </h3>
@@ -20,8 +20,11 @@
             onDelete(id) {
                 this.$emit("delete-task", id);
             },
+            toggleReminder(id) {
+                this.$emit("toggle-reminder", id);
+            },
         },
-        emits: ["delete-task"],
+        emits: ["delete-task", "toggle-reminder"],
     };
     
 </script>
