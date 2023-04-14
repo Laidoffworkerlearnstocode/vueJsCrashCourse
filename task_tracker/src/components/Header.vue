@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <h2>{{ title }}</h2>
-        <Button text="Add Task" color="steelblue"></Button>
+        <Button @add-task="$emit('add-task')" text="Add Task" color="steelblue"></Button>
     </header>
 </template>
 
@@ -19,6 +19,7 @@
         components: {
             Button,
         },
+        emits: ["add-task"],
     }
 </script>
 

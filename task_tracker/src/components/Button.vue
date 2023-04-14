@@ -1,5 +1,5 @@
 <template>
-    <button @click="onClick()" :style="{background:color}" class="btn">
+    <button @click="$emit('add-task')" :style="{background:color}" class="btn">
         {{ text }}
     </button>
 </template>
@@ -22,6 +22,7 @@
                 console.log("click");
             },
         },
+        emits: ["add-task"],
     }
 </script>
 
