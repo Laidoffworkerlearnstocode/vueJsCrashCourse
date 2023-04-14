@@ -1,19 +1,27 @@
 
 <template>
-  <Header title="Task Tracker"></Header>  
+  <Header title="Task Tracker"></Header>
+  <Tasks :tasks="this.tasks" @delete-task="deleteTask" ></Tasks>        
 </template>
 
 <script>
   import Header from './components/Header.vue';
+  import Tasks from './components/Tasks.vue';
 
   export default {
     name: 'App',
     components: {
-      Header
+      Header,
+      Tasks,
     },
     data(){
       return {
         tasks:[],
+      }
+    },
+    methods: {
+      deleteTask(id){
+        this.tasks = this.tasks.filter( _task => _task.id !== id);
       }
     },
     created(){
@@ -28,7 +36,7 @@
           id: 2,
           text: 'Meeting at School',
           day: 'Feb 6th at 1:30pm',
-          reminder: true,
+          reminder: false,
         },
         {
           id: 3,
