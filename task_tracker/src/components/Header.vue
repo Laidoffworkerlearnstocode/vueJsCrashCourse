@@ -1,7 +1,10 @@
 <template>
     <header class="header">
         <h2>{{ title }}</h2>
-        <Button @add-task="$emit('add-task')" text="Add Task" color="steelblue"></Button>
+        <Button 
+        @add-task="$emit('add-task')"
+        :showAddTask="addTaskShow"
+        ></Button>
     </header>
 </template>
 
@@ -13,6 +16,10 @@
         props: {
             title: {
                 type: String,
+                required: true,
+            },
+            addTaskShow: {
+                type: Boolean,
                 required: true,
             },
         },
