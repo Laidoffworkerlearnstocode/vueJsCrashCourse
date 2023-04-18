@@ -4,6 +4,7 @@
         <Button 
         @add-task="$emit('add-task')"
         :showAddTask="addTaskShow"
+        v-if="showButton"
         ></Button>
     </header>
 </template>
@@ -13,6 +14,11 @@
 
     export default {
         name: "Header",
+        data() {
+            return {
+                showButton: true,
+            };
+        },
         props: {
             title: {
                 type: String,
@@ -25,6 +31,11 @@
         },
         components: {
             Button,
+        },
+        computed: {
+            showButton() {
+                return this.$route.path === "/";
+            },
         },
         emits: ["add-task"],
     }
