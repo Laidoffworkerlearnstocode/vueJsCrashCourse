@@ -26,7 +26,6 @@
             toggleAddTask() {
                 this.$emit("add-task");
                 this.button.active = !this.button.active;
-                console.log(this.button.active);
             },
         },
         emits: ["add-task"],
