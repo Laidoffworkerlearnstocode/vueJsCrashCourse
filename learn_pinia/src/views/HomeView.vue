@@ -1,55 +1,40 @@
 <template>
   <div class="home">
     <div class="count">
-      {{count}}
+      {{countStore.count}}
     </div>
     <div>
       <button 
-      @click="decrement()" 
+      @click="countStore.decrement()" 
       class="button"
       >-</button>
       <button 
-      @click="increment()"  
+      @click="countStore.increment()"  
       class="button"
       >+</button>
     </div>
     <hr>
     <div>
-      {{oddOrEven}}
+      {{countStore.oddOrEven}}
     </div>
     <hr>
     <input 
     type="text" 
     placeholder="Adjust Count Here"
-    v-model="count"
+    v-model="countStore.count"
     >
   </div>
 </template>
 
 <script>
-import { computed } from '@vue/reactivity';
+import { useCounterStore } from '../stores/index.js';
 
   export default {
-    name: 'HomeView',
-    data(){
-      return {
-        count: 0
-      }
+    setup() {
+      const countStore = useCounterStore();
+      return {countStore}
     },
-    methods: {
-      increment(){
-        this.count++
-      },
-      decrement(){
-        this.count--
-      }
-    },
-    computed:{
-      oddOrEven(){
-        return this.count % 2 === 0 ? 'This is a even counter' : 'This is a odd counter'
-      }
-    }
-  }
+  };
 
 </script>
 
