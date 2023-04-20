@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <div class="count">
-      {{countStore.count}}
-    </div>
+    <Counter></Counter>
     <div>
       <button 
       @click="countStore.decrement()" 
@@ -27,22 +25,23 @@
 </template>
 
 <script>
-import { useCounterStore } from '../stores/index.js';
+import { useCounterStore } from '@/stores/index.js';
+import Counter from '@/components/Counter.vue';
 
-  export default {
-    setup() {
-      const countStore = useCounterStore();
-      return {countStore}
-    },
-  };
+export default {
+  data() {
+    return {
+      countStore: useCounterStore()
+    }
+  },
+  components: {
+    Counter
+  }
+};
 
 </script>
 
 <style scoped>
-  .count{
-    font-size: 4rem;
-    font-weight: bold;
-  }
 
   .button{
     margin: 1rem;
